@@ -2,16 +2,13 @@ import { events } from "@/app/mock-events-data/events-data";
 import { slugify } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
-interface PageProps {
-  params: {
-    eventSlug: string;
-  };
-}
 
-export default async function EventDetails({ params }: PageProps) {
-  const event = events.find(
-    e => slugify(e.name) === params.eventSlug
-  );
+export default async function EventDetails({
+  params,
+}: {
+  params: { eventSlug: string };
+}) {
+  const event = events.find((e) => slugify(e.name) === params.eventSlug);
 
   if (!event) return notFound();
 
