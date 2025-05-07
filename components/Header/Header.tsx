@@ -5,11 +5,9 @@ import { MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
@@ -26,11 +24,11 @@ const Header = () => {
     <section className="relative py-4 flex justify-center px-4 md:px-6 lg:px-14 xl:px-16 header-animation">
       <div className="w-full">
         <nav className="flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <span className="text-lg md:text-xl font-bold tracking-tighter">
               CampusConnect
             </span>
-          </a>
+          </Link>
           <NavigationMenu className="hidden lg:block absolute left-[50%] translate-x-[-50%]">
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -76,32 +74,24 @@ const Header = () => {
             <SheetContent side="top" className="max-h-screen overflow-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <a
-                    href="https://www.shadcnblocks.com"
-                    className="flex items-center gap-2"
-                  >
-                    <img
-                      src="https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg"
-                      className="max-h-8"
-                      alt="Shadcn UI Navbar"
-                    />
+                  <Link href="/" className="flex items-center gap-2">
                     <span className="text-lg font-semibold tracking-tighter">
-                      Shadcnblocks.com
+                      CampusConnect
                     </span>
-                  </a>
+                  </Link>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col p-4">
                 <div className="flex flex-col gap-6">
-                  <a href="#" className="font-medium">
+                  <Link href="#" className="font-medium">
                     Templates
-                  </a>
-                  <a href="#" className="font-medium">
+                  </Link>
+                  <Link href="#" className="font-medium">
                     Blog
-                  </a>
-                  <a href="#" className="font-medium">
+                  </Link>
+                  <Link href="#" className="font-medium">
                     Pricing
-                  </a>
+                  </Link>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
                   <Button className="cursor-pointer">
