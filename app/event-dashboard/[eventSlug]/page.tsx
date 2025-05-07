@@ -1,14 +1,36 @@
 import { events } from "@/app/mock-events-data/events-data";
+import { get } from "http";
 import { notFound } from "next/navigation";
 
-export default function EventDetails({
-  params,
-}: {
-  params: { eventSlug: string };
-}) {
-  const event = events.find((e) => e.slug ===  params.eventSlug);
+type Props = {
+  params: {
+    eventSlug: string;
+  };
+};
 
-  if (!event) return notFound();
+export default function EventDetails({ params }: Props) {
+  const event = events.find(
+    (e) =>
+      e.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]/gi, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "") === params.eventSlug
+  );
+
+  const getName = (name: any) => {
+    const HUL = name.toLowerCase().replace(/\s+/g, "-");
+    console.log(HUL);
+  };
+  getName("CodeStorm 5.0");
+
+  if (!event) {
+    return (
+      <div className="text-center mt-20 text-xl text-red-500">
+        Event not found
+      </div>
+    );
+  }
 
   return (
     <div className="px-4">
