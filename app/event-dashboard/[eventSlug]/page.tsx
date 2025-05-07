@@ -1,6 +1,4 @@
 import { events } from "@/app/mock-events-data/events-data";
-import { get } from "http";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -17,12 +15,6 @@ export default function EventDetails({ params }: Props) {
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "") === params.eventSlug
   );
-
-  const getName = (name: any) => {
-    const HUL = name.toLowerCase().replace(/\s+/g, "-");
-    console.log(HUL);
-  };
-  getName("CodeStorm 5.0");
 
   if (!event) {
     return (
