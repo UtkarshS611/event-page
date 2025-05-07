@@ -1,9 +1,6 @@
-import React from 'react'
-
-const page = () => {
+export default function EventDashboard() {
   return (
-    <div>View</div>
-  )
+    <div>
+    </div>
+  );
 }
-
-export default page

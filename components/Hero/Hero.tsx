@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           )}
         >
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-            <span>✨ Introducing Name</span>
+            <span>✨ Introducing CampurConnect</span>
             <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
           </AnimatedShinyText>
         </div>
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="z-[99] flex justify-center items-center flex-col sm:flex-row gap-4 my-6 w-full px-6 hero-button-animation">
         <Button className="cursor-pointer">
-          <Link href={"/event-dashboard"}>View Events</Link>
+          <Link href={"/event-dashboard/codestorm-5-0"}>View Events</Link>
         </Button>
         <Button variant={"outline"} className="cursor-pointer">
           <Link href={"/create-event"}>Host Event</Link>

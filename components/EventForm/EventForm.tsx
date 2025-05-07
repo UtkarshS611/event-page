@@ -7,6 +7,12 @@ import {
   setEventName,
   setCollegeName,
   setDescription,
+  setEventType,
+  setEventLocation,
+  setRegistrationCount,
+  setRegistrationDeadline,
+  setContactEmail,
+  setEventLink,
   resetForm,
 } from "@/app/redux/eventSlice";
 import { useState } from "react";
@@ -34,9 +40,17 @@ import { cn } from "@/lib/utils";
 
 const EventForm = () => {
   const dispatch = useDispatch();
-  const { eventName, collegeName, description } = useSelector(
-    (state: RootState) => state.contact
-  );
+  const {
+    eventName,
+    collegeName,
+    description,
+    eventType,
+    eventLocation,
+    eventLink,
+    registrationCount,
+    registrationDeadline,
+    contactEmail,
+  } = useSelector((state: RootState) => state.contact);
 
   const [date, setDate] = useState<Date>();
   const [time, setTime] = useState("");
@@ -49,6 +63,12 @@ const EventForm = () => {
     console.log("Date:", date ? format(date, "PPP") : "Not selected");
     console.log("Time:", time + " " + ampm);
     console.log("Message:", description);
+    console.log("Event Type:", eventType);
+    console.log("Event Location:", eventLocation);
+    console.log("Registration Count:", registrationCount);
+    console.log("Registration Deadline:", registrationDeadline);
+    console.log("Contact Email:", contactEmail);
+    console.log("Event Link:", eventLink);
 
     dispatch(resetForm());
     setDate(undefined);
@@ -60,7 +80,19 @@ const EventForm = () => {
       const nextCounter = counter + 1;
 
       // Save to localStorage
-      const eventData = { eventName, collegeName, description };
+      const eventData = {
+        eventName,
+        collegeName,
+        description,
+        eventType,
+        eventLocation,
+        eventLink,
+        registrationCount,
+        registrationDeadline,
+        contactEmail,
+        date: date ? format(date, "PPP") : "Not selected",
+        time: time + " " + ampm,
+      };
       localStorage.setItem(`event_${nextCounter}`, JSON.stringify(eventData));
 
       // Update the event_counter
@@ -108,6 +140,48 @@ const EventForm = () => {
         </div>
         <div className="flex gap-6 md:flex-row flex-col">
           <div className="flex-1 space-y-3">
+            <Label htmlFor="firstName">Event Type</Label>
+            <Input
+              type="text"
+              value={eventType}
+              onChange={(e) => dispatch(setEventType(e.target.value))}
+              placeholder="Hackathon"
+            />
+          </div>
+          <div className="flex-1 space-y-3">
+            <Label htmlFor="firstName">Event Location</Label>
+            <Input
+              type="text"
+              value={eventLocation}
+              onChange={(e) => dispatch(setEventLocation(e.target.value))}
+              placeholder="Delhi"
+            />
+          </div>
+        </div>
+        <div className="flex gap-6 md:flex-row flex-col">
+          <div className="flex-1 space-y-3">
+            <Label htmlFor="firstName">Registeration Count</Label>
+            <Input
+              type="text"
+              value={registrationCount}
+              onChange={(e) => dispatch(setRegistrationCount(e.target.value))}
+              placeholder="10"
+            />
+          </div>
+          <div className="flex-1 space-y-3">
+            <Label htmlFor="firstName">Registeration Deadline</Label>
+            <Input
+              type="text"
+              value={registrationDeadline}
+              onChange={(e) =>
+                dispatch(setRegistrationDeadline(e.target.value))
+              }
+              placeholder="10th May, 2025"
+            />
+          </div>
+        </div>
+        <div className="flex gap-6 md:flex-row flex-col">
+          <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Date</Label>
             <Popover>
               <PopoverTrigger asChild>
@@ -150,6 +224,26 @@ const EventForm = () => {
                 </SelectContent>
               </Select>
             </div>
+          </div>
+        </div>
+        <div className="flex gap-6 md:flex-row flex-col">
+          <div className="flex-1 space-y-3">
+            <Label htmlFor="firstName">Event Link</Label>
+            <Input
+              type="text"
+              value={eventLink}
+              onChange={(e) => dispatch(setEventLink(e.target.value))}
+              placeholder="https://iiit.ac.in/startups-meetup"
+            />
+          </div>
+          <div className="flex-1 space-y-3">
+            <Label htmlFor="firstName">Contact Email</Label>
+            <Input
+              type="text"
+              value={contactEmail}
+              onChange={(e) => dispatch(setContactEmail(e.target.value))}
+              placeholder="organizer@example.com"
+            />
           </div>
         </div>
         <div className="flex gap-6 md:flex-row flex-col">

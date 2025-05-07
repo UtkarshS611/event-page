@@ -59,7 +59,7 @@ const Header = () => {
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
             <Button className="cursor-pointer">
-              <Link href={"/event-dashboard"}>View Events</Link>
+              <Link href={"/event-dashboard/codestorm-5-0"}>View Events</Link>
             </Button>
             <Button variant={"outline"} className="cursor-pointer">
               <Link href={"/create-event"}>Host Event</Link>
@@ -95,7 +95,7 @@ const Header = () => {
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
                   <Button className="cursor-pointer">
-                    <Link href={"/event-dashboard"}>View Events</Link>
+                    <Link href={"/event-dashboard/codestorm-5-0"}>View Events</Link>
                   </Button>
                   <Button variant={"outline"} className="cursor-pointer">
                     <Link href={"/create-event"}>Host Event</Link>
