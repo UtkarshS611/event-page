@@ -171,3 +171,16 @@
     opacity: 1;
   }
 }
+
+.header-animation{
+  animation: header-animation 0.8s ease-in-out;
+}
+
+@keyframes header-animation {
+  from{
+    transform: translateY(-100%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+}
