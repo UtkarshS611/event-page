@@ -1,28 +1,19 @@
 import { events } from "@/app/mock-events-data/events-data";
+import { slugify } from "@/lib/utils";
+import { notFound } from "next/navigation";
 
-type Props = {
+interface PageProps {
   params: {
     eventSlug: string;
   };
-};
+}
 
-export default function EventDetails({ params }: Props) {
+export default async function EventDetails({ params }: PageProps) {
   const event = events.find(
-    (e) =>
-      e.name
-        .toLowerCase()
-        .replace(/[^a-z0-9]/gi, "-")
-        .replace(/-+/g, "-")
-        .replace(/^-|-$/g, "") === params.eventSlug
+    e => slugify(e.name) === params.eventSlug
   );
 
-  if (!event) {
-    return (
-      <div className="text-center mt-20 text-xl text-red-500">
-        Event not found
-      </div>
-    );
-  }
+  if (!event) return notFound();
 
   return (
     <div className="px-4">
