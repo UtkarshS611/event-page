@@ -2,13 +2,13 @@ import { events } from "@/app/mock-events-data/events-data";
 import { slugify } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
+type Params = Promise<{ slug: string }>;
 
-export default async function EventDetails({
-  params,
-}: {
-  params: { eventSlug: string };
+export default async function EventDetails(props: {
+  params: Params;
 }) {
-  const event = events.find((e) => slugify(e.name) === params.eventSlug);
+  const params = await props.params;
+  const event = events.find((e) => slugify(e.name) === params.slug);
 
   if (!event) return notFound();
 
