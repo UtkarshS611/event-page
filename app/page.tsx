@@ -1,11 +1,11 @@
-import EventForm from '@/components/EventForm/EventForm'
+import Hero from '@/components/Hero/Hero'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      <EventForm/>
-    </div>
+    <>
+      <Hero/>
+    </>
   )
 }
 

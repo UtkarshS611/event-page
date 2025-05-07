@@ -41,6 +41,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-shiny-text: shiny-text 8s infinite;
+  @keyframes shiny-text {
+  0%, 90%, 100% {
+    background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+  30%, 60% {
+    background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
 }
 
 :root {
@@ -118,5 +127,47 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.hero-blocks-animation{
+  animation: hero-blocks 1s ease-in-out;
+}
+
+@keyframes hero-blocks {
+  from{
+    scale: 2;
+    opacity: 0.5;
+  }
+  to{
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.hero-text-animation{
+  animation: hero-text 0.8s ease-in-out;
+}
+@keyframes hero-text {
+  from{
+    transform: translateY(-40%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.hero-button-animation{
+  animation: hero-button 0.8s ease-in-out;
+}
+@keyframes hero-button {
+  from{
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
