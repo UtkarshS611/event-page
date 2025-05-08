@@ -21,7 +21,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <section className="relative py-4 flex justify-center px-4 md:px-6 lg:px-14 xl:px-16 header-animation">
+    <section className="z-[9999] relative py-4 flex justify-center px-4 md:px-6 lg:px-14 xl:px-16 header-animation">
       <div className="w-full">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -36,7 +36,7 @@ const Header = () => {
                   href="#"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Products
+                  Home
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -44,7 +44,7 @@ const Header = () => {
                   href="#"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Resources
+                  Events
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -52,7 +52,7 @@ const Header = () => {
                   href="#"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Contact
+                  Features
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -84,13 +84,13 @@ const Header = () => {
               <div className="flex flex-col p-4">
                 <div className="flex flex-col gap-6">
                   <Link href="#" className="font-medium">
-                    Templates
+                    Home
                   </Link>
                   <Link href="#" className="font-medium">
-                    Blog
+                    Events
                   </Link>
                   <Link href="#" className="font-medium">
-                    Pricing
+                    Host
                   </Link>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
