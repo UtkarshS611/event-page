@@ -122,6 +122,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Event name</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={eventName}
               onChange={(e) => dispatch(setEventName(e.target.value))}
@@ -131,6 +132,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">College name</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={collegeName}
               onChange={(e) => dispatch(setCollegeName(e.target.value))}
@@ -142,6 +144,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Event Type</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={eventType}
               onChange={(e) => dispatch(setEventType(e.target.value))}
@@ -151,6 +154,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Event Location</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={eventLocation}
               onChange={(e) => dispatch(setEventLocation(e.target.value))}
@@ -162,6 +166,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Registeration Count</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={registrationCount}
               onChange={(e) => dispatch(setRegistrationCount(e.target.value))}
@@ -171,6 +176,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Registeration Deadline</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={registrationDeadline}
               onChange={(e) =>
@@ -210,6 +216,7 @@ const EventForm = () => {
             <Label htmlFor="firstName">Time</Label>
             <div className="flex gap-3">
               <Input
+                autoComplete="true"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
                 placeholder="10"
@@ -230,6 +237,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Event Link</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={eventLink}
               onChange={(e) => dispatch(setEventLink(e.target.value))}
@@ -239,6 +247,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Contact Email</Label>
             <Input
+              autoComplete="true"
               type="text"
               value={contactEmail}
               onChange={(e) => dispatch(setContactEmail(e.target.value))}
@@ -250,6 +259,7 @@ const EventForm = () => {
           <div className="flex-1 space-y-3">
             <Label htmlFor="firstName">Description</Label>
             <Textarea
+              autoComplete="true"
               value={description}
               onChange={(e) => dispatch(setDescription(e.target.value))}
               className="resize-none"
